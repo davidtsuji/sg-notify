@@ -1,0 +1,6 @@
+{
+	"name": "sg-notify",
+	"dependencies": {
+		"connect": "*"
+	}
+}

@@ -1,0 +1,21 @@
+{
+	"name": "sg-notify",
+	"main": "index.js",
+	"styles":[
+		"styles/sg-notify.css"
+	],
+	"scripts": [
+		"index.js",
+		"message.js",
+		"template.js"
+	],
+	"dependencies": {
+		"component/dom": "*",
+		"component/type": "*"
+	},
+	"development": {
+		"davidtsuji/jquery": "*",
+		"visionmedia/mocha": "*",
+		"component/assert": "*"
+	}
+}

@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>sg-notify demo</title>
+
+	<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="build.css">
+	<script src="build.js"></script>
+
+</head>
+<body>
+	
+	<div class="container">
+
+		<div class="page-header">
+			<h1>sg.notify <small>yet another simple notification feedback library</small></h1>
+		</div>
+		
+		<div class="well well-large" style="text-align: center">
+
+			<button class="btn success" type="button">success</button>
+			<button class="btn warn" type="button">warning</button>
+			<button class="btn error" type="button">error</button>
+			<button class="btn info" type="button">info</button>
+			<button class="btn log" type="button">log</button>
+			<button class="btn hide-all" type="button">hide all</button>
+
+		</div>
+
+	</div>
+
+	<script>
+
+		var dom = require('dom')
+		  , notify = require('sg-notify')
+		  , counter = 0
+
+		dom('button.btn.success').on('click', function(){
+
+			notify.success('success');
+
+		});
+
+		dom('button.btn.warn').on('click', function(){
+
+			notify.warn('Lorem Parturient Amet Nullam ' + (counter++), 10000, true);
+
+		});
+
+		dom('button.btn.error').on('click', function(){
+
+			notify.error('Cras justo odio, dapibus ac facilisis in, egestas eget quam. Nullam id dolor id nibh ultricies vehicula ut id elit. ' + (counter++), true);
+
+		});
+
+		dom('button.btn.info').on('click', function(){
+
+			notify.info('Parturient Sem Commodo ' + (counter++), -1, true, true);
+
+		});
+
+		dom('button.btn.log').on('click', function(){
+
+			var message = notify.log('Parturient Sem Commodo ' + (counter++));
+
+			setTimeout(function(){
+
+				message.destroy();
+
+			}, 2000);
+
+		});
+
+		dom('button.btn.hide-all').on('click', function(){
+
+			notify.hide();
+
+		});
+
+	</script>
+
+</body>
+</html>
