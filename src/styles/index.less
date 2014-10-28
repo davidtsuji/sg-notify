@@ -1,4 +1,7 @@
-@import "animate.less";
+@import "../../bower_components/bootstrap/less/mixins/vendor-prefixes.less";
+@import (inline) "../../bower_components/animate.css/source/_base.css";
+@import (inline) "../../bower_components/animate.css/source/bouncing_entrances/bounceInUp.css";
+@import (inline) "../../bower_components/animate.css/source/bouncing_exits/bounceOutDown.css";
 
 @message-height: 50px;
 @message-margin: 5px;
@@ -20,27 +23,20 @@
 @log-background-color: #7E8C8D;
 
 .type (@color, @background-color) {
-
 	text-shadow: 0 -1px 0px darken(@background-color, 5%);
 	color: @color;
 	background-color: @background-color;
 
 	&.disabled {
-
 		&:hover {
-
 			cursor: not-allowed;
 			background-color: @background-color;
-
 		}
-
 	}
 
 	&:hover {
-		
 		cursor: pointer;
 		background-color: darken(@background-color, 5%);
-
 	}
 
 }
@@ -70,12 +66,6 @@ html > body {
 			text-align: center;
 			border-radius: 3px;
 			width: @message-max-width;
-			font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-			font-weight: 100;
-			font-size: 20px;
-
-			-webkit-transition: margin-bottom 550ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
-			-moz-transition: margin-bottom 550ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
 			transition: margin-bottom 550ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
 			&.success { .type(@success-color, @success-background-color) }
@@ -101,7 +91,6 @@ html > body {
 			&:nth-last-child(15) { .margin-bottom(15) }
 
 			>span {
-
 				position: absolute;
 				top: 0;
 				right: 40px;
@@ -111,7 +100,12 @@ html > body {
 				text-overflow: ellipsis;
 				overflow: hidden;
 				pointer-events: none;
-
+				font-family: "Helvetica Neue","Helvetica","Arial","Verdana","sans-serif";
+				font-weight: normal;
+				font-size: 16px;
+				text-rendering: optimizeLegibility;
+				-webkit-font-smoothing: antialiased;
+				transform: translate3d(0, 0, 0);
 			}
 
 		}
@@ -133,12 +127,10 @@ html > body {
 			z-index: 10000;
 
 			>aside {
-
 				left: 10px;
 				right: 10px;
 				width: inherit;
 				margin-left: inherit;
-
 			}
 
 		}

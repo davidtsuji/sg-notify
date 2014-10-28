@@ -1,20 +1,23 @@
-
 # sg-notify
 
-  another simple notification feedback library
+another simple notification feedback library
 
 ## Installation
 
-    $ component install davidtsuji/sg-notify
+```bash
+bower install sg-notify
+```
 
 ## API
 
-   notify.success(message, [isSticky || timeToLive, isDisabled])
-   notify.warn(message, [isSticky || timeToLive, isDisabled])
-   notify.error(message, [isSticky || timeToLive, isDisabled])
-   notify.info(message, [isSticky || timeToLive, isDisabled])
-   notify.log(message, [isSticky || timeToLive, isDisabled])
+```js
+sgNotify.success(message, [isSticky || timeToLive, isDisabled])
+sgNotify.warn(message, [isSticky || timeToLive, isDisabled])
+sgNotify.error(message, [isSticky || timeToLive, isDisabled])
+sgNotify.info(message, [isSticky || timeToLive, isDisabled])
+sgNotify.log(message, [isSticky || timeToLive, isDisabled])
+```
 
 ## License
 
-  MIT
+MIT
